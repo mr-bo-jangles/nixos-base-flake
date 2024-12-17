@@ -14,7 +14,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     # Please replace my-nixos with your hostname
     nixosConfigurations= {
       playground = nixpkgs.lib.nixosSystem {
