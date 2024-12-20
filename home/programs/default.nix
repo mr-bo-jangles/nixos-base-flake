@@ -7,6 +7,7 @@
       ./discord.nix
       ./git.nix
       ./prompt.nix
+      ./steam.nix
       ./shell
       ./terminal
     ];
