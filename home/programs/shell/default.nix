@@ -3,14 +3,14 @@
 with lib;
 
 let
-  cfg = config.programs.shell;
+  cfg = config.shellChoice;
 in {
   imports = [
       ./bash.nix
       ./zsh.nix
   ]
-  ++ (lib.optionals (options.shellChoice == "zsh") [./zsh.nix])
-  ++ (lib.optionals (options.shellChoice == "bash") [./bash.nix]);
+  ++ (lib.optionals (cfg == "zsh") [./zsh.nix])
+  ++ (lib.optionals (cfg == "bash") [./bash.nix]);
 
   options = {
     shellChoice = mkOption {
