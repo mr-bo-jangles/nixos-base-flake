@@ -12,7 +12,7 @@
     extraCompatPackages = with pkgs; [ proton-ge-bin ];
   };
 
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     protonup-qt
   ];
 
