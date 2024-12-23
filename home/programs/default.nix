@@ -8,6 +8,7 @@
       ./git.nix
       ./prompt.nix
       ./steam.nix
+      ./spotify.nix
       ./shell
       ./terminal
     ];
