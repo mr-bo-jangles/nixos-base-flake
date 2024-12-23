@@ -75,6 +75,10 @@
 
   programs.firefox.enable = true;
 
+  programs.steam = {
+    enable = true;
+  };
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
