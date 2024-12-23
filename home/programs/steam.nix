@@ -4,7 +4,7 @@
 
   home.packages = with pkgs; [
     steam
-    proton-ge-bin
+    proton-ge
     protonup-qt
   ];
 
