@@ -9,10 +9,10 @@ in {
       ./bash.nix
       ./zsh.nix
   ]
-  ++ (lib.optionals (options.programs.shell.shellChoice == "zsh") [./zsh.nix])
-  ++ (lib.optionals (options.programs.shell.shellChoice == "bash") [./bash.nix]);
+  ++ (lib.optionals (options.shellChoice == "zsh") [./zsh.nix])
+  ++ (lib.optionals (options.shellChoice == "bash") [./bash.nix]);
 
-  options.programs.shell = {
+  options = {
     shellChoice = mkOption {
       type = enum;
       default = "zsh";
@@ -20,10 +20,5 @@ in {
       description = "Choice of shell you want this environment to use, (bash/zsh/etc..).";
     };
   };
-
-  config = {
-
-  };
-
 
 }
