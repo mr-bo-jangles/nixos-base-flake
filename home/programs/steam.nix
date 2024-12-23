@@ -1,18 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-    ];
-
-  # starship - an customizable prompt for any shell
-  programs.steam = {
-    enable = true;
-    # custom settings
-    extraCompatPackages = with pkgs; [ proton-ge-bin ];
-  };
 
   home.packages = with pkgs; [
+    steam
+    proton-ge-bin
     protonup-qt
   ];
 
