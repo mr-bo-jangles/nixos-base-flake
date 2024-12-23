@@ -15,7 +15,7 @@ with lib;
 
   imports = [
   ]
-  ++ (lib.optionals (options.shellChoice == "zsh") [./zsh.nix])
-  ++ (lib.optionals (options.shellChoice == "bash") [./bash.nix]);
+  ++ (lib.optionals (config.shellChoice == "zsh") [./zsh.nix])
+  ++ (lib.optionals (config.shellChoice == "bash") [./bash.nix]);
 
 }
