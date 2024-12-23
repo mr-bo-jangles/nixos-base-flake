@@ -36,6 +36,25 @@
             }
         ];
       };
+      spankbank = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          # Import the previous configuration.nix we used,
+          # so the old configuration file still takes effect
+          ./hosts/spankbank
+          home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              # TODO replace ryan with your own username
+              home-manager.users.josh = import ./home;
+
+              # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+            }
+        ];
+      };
     };
   };
 }

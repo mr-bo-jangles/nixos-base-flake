@@ -6,7 +6,7 @@
     ];
   # basic configuration of git, please change to your own
   programs.bash = {
-    enable = true;
+    enable = mkIf config.shellChoice;
     enableCompletion = true;
     # TODO add your custom bashrc here
     bashrcExtra = ''
