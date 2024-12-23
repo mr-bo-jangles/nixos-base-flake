@@ -2,15 +2,10 @@
 
 with lib;
 
-let
-  cfg = config.shellChoice;
-in {
-  imports = [
-      ./bash.nix
-      ./zsh.nix
-  ]
-  ++ (lib.optionals (cfg == "zsh") [./zsh.nix])
-  ++ (lib.optionals (cfg == "bash") [./bash.nix]);
+{
+  imports = []
+  ++ (lib.optionals (config.shellChoice == "zsh") [./zsh.nix])
+  ++ (lib.optionals (config.shellChoice == "bash") [./bash.nix]);
 
   options = {
     shellChoice = mkOption {
