@@ -1,0 +1,48 @@
+keys:
+  - &curious age1da03q69n40s5evyl7ekyzss9c3qwzrcaxpaaf56c8fat7v4a6g9q2lmp4j
+  - &spankbank age1spmjqvqh6e0yk35kyjpqw6098wgjdea54wn9vfk238y5p69wgcfs4w06zu
+  - &sleepytime age1spmjqvqh6e0yk35kyjpqw6098wgjdea54wn9vfk238y5p69wgcfs4w06zu # todo: Fill with the real value
+  - &chonk age1spmjqvqh6e0yk35kyjpqw6098wgjdea54wn9vfk238y5p69wgcfs4w06zu # todo: Fill with the real value
+  - &ns3107550 age1spmjqvqh6e0yk35kyjpqw6098wgjdea54wn9vfk238y5p69wgcfs4w06zu # todo: Fill with the real value
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+    - age:
+      - *curious
+      - *spankbank
+      - *sleepytime
+      - *chonk
+      - *ns3107550
+  - path_regex: secrets/curious.yaml$
+    key_groups:
+    - age:
+        - *curious
+  - path_regex: secrets/spankbank.yaml$
+    key_groups:
+      - age:
+          - *spankbank
+  - path_regex: secrets/sleepytime.yaml$
+    key_groups:
+      - age:
+          - *sleepytime
+  - path_regex: secrets/chonk.yaml$
+    key_groups:
+      - age:
+          - *chonk
+  - path_regex: secrets/ns3107550.yaml$
+    key_groups:
+      - age:
+          - *ns3107550
+  - path_regex: secrets/wireless.yaml$
+    key_groups:
+      - age:
+          - *spankbank
+          - *curious
+  - path_regex: secrets/ssh.yaml$
+    key_groups:
+      - age:
+          - *curious
+          - *spankbank
+          - *sleepytime
+          - *chonk
+          - *ns3107550
